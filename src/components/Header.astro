@@ -1,0 +1,72 @@
+---
+import Logo from "../images/logo.svg";
+import IconClose from "../images/icon-menu-close.svg";
+import IconMenu from "../images/icon-menu.svg";
+
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { name: "Home", href: "/" },
+  { name: "New", href: "/" },
+  { name: "Popular", href: "/" },
+  { name: "Trending", href: "/" },
+  { name: "Categories", href: "/" },
+];
+---
+
+<header class="w-full max-w-screen-sm mx-auto mt-7">
+  <nav class="flex justify-between items-center mx-5 h-8">
+    <!-- Logo / botón de incio -->
+    <a href="/" aria-label="Go to home" class="cursor-pointer w-12">
+      <Logo class={"transform origin-left scale-75"} />
+    </a>
+
+    <!-- Botón de menú móvil -->
+    <button
+      id="btn-menu"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+      class="cursor-pointer h-8"
+    >
+      <IconMenu />
+    </button>
+
+    <!-- Overlay y menú -->
+    <div
+      id="menu-modal"
+      class="bg-Very-dark-blue/50 fixed inset-0 hidden"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        class="bg-Off-white absolute right-0 h-screen flex flex-col items-end p-5"
+      >
+        <!-- Botón de cierre del menú -->
+        <button
+          id="btn-close"
+          type="button"
+          class="cursor-pointer mt-2"
+          aria-label="Close menu"
+        >
+          <IconClose />
+        </button>
+        <ul class="flex flex-col w-60 gap-6 mt-25 text-xl">
+          {
+            navItems.map((item: NavItem) => (
+              <li>
+                <a href={item.href} class="hover:text-amber-600">
+                  {item.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script src="../scripts/header-menu.js"></script>
+</header>
