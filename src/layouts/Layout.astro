@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import PopularNew from "../components/PopularNew.astro";
 ---
 
 <!doctype html>
@@ -9,8 +10,11 @@ import Header from "../components/Header.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>W. Home</title>
   </head>
-  <body class="font-Inter bg-Off-white flex justify-center">
+  <body class="font-Inter bg-Off-white flex flex-col items-center">
     <Header />
+    <main class="px-5 pb-8">
+      <PopularNew />
+    </main>
     <slot />
   </body>
 </html>

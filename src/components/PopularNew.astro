@@ -1,0 +1,29 @@
+---
+import Image from "astro/components/Image.astro";
+import ImageNewMobile from "../images/image-web-3-mobile.jpg";
+---
+
+<article class="flex flex-col gap-6">
+  <!-- Imagen de la noticia popular -->
+  <figure>
+    <Image
+      src={ImageNewMobile}
+      alt={"Image of the popular new."}
+      class={"w-full"}
+    />
+  </figure>
+
+  <h2 class="text-5xl font-bold text-Very-dark-blue">
+    The Bright Future of Web 3.0?
+  </h2>
+  <p class="text-base leading-relaxed text-Dark-grayish-blue">
+    We dive into the next evolution of the web that claims to put the power of
+    the platform back into the hands of the people. But is it really fulfilling
+    its promise?
+  </p>
+  <button
+    type="button"
+    class="inline-block px-4 py-3 font-semibold tracking-[0.2em] text-lg text-Very-dark-blue bg-Soft-red w-56 hover:text-Off-white hover:bg-Very-dark-blue cursor-pointer"
+    >READ MORE
+  </button>
+</article>
