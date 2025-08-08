@@ -1,0 +1,50 @@
+---
+interface NewListItems {
+  title: string;
+  abstract: string;
+}
+
+const listItems: NewListItems[] = [
+  {
+    title: "Hydrogen VS Electric Cars",
+    abstract: "Will hydrogen-fueled cars ever catch up to EVs?",
+  },
+  {
+    title: "The Downsides of AI Artistry",
+    abstract:
+      "What are the possible adverse effects of on-demand AI image generation?",
+  },
+  {
+    title: "Is VC Funding Drying Up?",
+    abstract:
+      "Private funding by VC firms is down 50% YOY. We take a look at what that means.",
+  },
+];
+---
+
+<section aria-labelledby="List of new news">
+  <div class="bg-Very-dark-blue p-6">
+    <!-- Título de la sección -->
+    <h2 class="text-Soft-orange font-bold text-4xl mb-7">New</h2>
+
+    <ul>
+      {
+        listItems.map((item, index) => (
+          <li class="space-y-2 group cursor-pointer">
+            <h3 class="text-Off-white text-lg font-bold leading-relaxed group-hover:text-Soft-orange">
+              {item.title}
+            </h3>
+            <p class="text-Grayish-blue text-sm leading-relaxed">
+              {item.abstract}
+            </p>
+          </li>
+          <>
+          {index !== listItems.length -1 && (
+            <div class="h-px bg-Grayish-blue my-7"></div>
+          )}
+          </>
+        ))
+      }
+    </ul>
+  </div>
+</section>
